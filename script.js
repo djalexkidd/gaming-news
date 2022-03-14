@@ -1,4 +1,7 @@
-const APICALL = "https://newsapi.org/v2/everything?q=gaming&from=2022-03-14&language=fr&sortBy=publishedAt&apiKey=9bb12d05dbd64b3fb03c2bb2ae8db510";
+var todaysDate = new Date()
+
+const APICALL = `https://newsapi.org/v2/everything?q=gaming&from=${convertDate(todaysDate)}&language=fr&sortBy=publishedAt&apiKey=9bb12d05dbd64b3fb03c2bb2ae8db510`
+
 const affichage = document.querySelector('.affichage')
 const switchTheme = document.querySelector('.theme')
 const bodyNode = document.querySelector('body')
@@ -41,5 +44,16 @@ switchTheme.addEventListener('submit', (e) => {
     bodyNode.classList.toggle("body-dark")
     headerNode.classList.toggle("body-dark")
 })
+
+function convertDate(date) {
+    var yyyy = date.getFullYear().toString()
+    var mm = (date.getMonth()+1).toString()
+    var dd  = date.getDate().toString()
+  
+    var mmChars = mm.split('')
+    var ddChars = dd.split('')
+  
+    return yyyy + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' + (ddChars[1]?dd:"0"+ddChars[0])
+}
 
 callAPI()
