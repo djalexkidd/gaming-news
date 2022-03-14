@@ -1,0 +1,66 @@
+/*POLICES*/
+@font-face {
+    font-family: 'Ubuntu';
+    src : url('fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'UbuntuBold';
+    src : url('fonts/Ubuntu-Bold.ttf') format('truetype')
+}
+
+body {
+    background-color: #001e3c;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.logo {
+    display: block;
+    height: 350px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.affichage {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.carte {
+    width: 500px;
+    height: 800px;
+    background-color: #004c99;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'UbuntuBold', sans-serif;
+}
+
+.image {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+li {
+    list-style-type: none;
+    margin-left: -20px;
+    margin-bottom: 8px;
+}
+
+a {
+    color: rgb(167, 168, 255);
+}
+
+/* Ajuste les dimentions de la grille de projets et du texte de la navbar pour les résolutions inférieures */
+@media (min-width: 1000px) {
+    .affichage { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1550px) {
+    .affichage { grid-template-columns: repeat(3, 1fr); }
+}
