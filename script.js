@@ -1,5 +1,8 @@
 const APICALL = "https://newsapi.org/v2/everything?q=gaming&from=2022-03-14&language=fr&sortBy=publishedAt&apiKey=9bb12d05dbd64b3fb03c2bb2ae8db510";
 const affichage = document.querySelector('.affichage')
+const switchTheme = document.querySelector('.theme')
+const bodyNode = document.querySelector('body')
+const headerNode = document.querySelector('header')
 
 // Création d'une fonction asynchrone
 async function callAPI() {
@@ -32,5 +35,11 @@ function creationCarte(article) {
         affichage.innerHTML += carteHTML
     }
 }
+
+switchTheme.addEventListener('submit', (e) => {
+    e.preventDefault()
+    bodyNode.classList.toggle("body-dark")
+    headerNode.classList.toggle("body-dark")
+})
 
 callAPI()
