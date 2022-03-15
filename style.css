@@ -100,7 +100,7 @@ a {
 
 /* Ajuste les dimentions de la grille des articles pour les résolutions inférieures */
 @media (min-width: 540px) {
-    .carte { width: 500px; }
+    .carte { width: 500px; height: 650px; }
     footer { font-size: 24px; }
 }
 
