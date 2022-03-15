@@ -6,6 +6,7 @@ const affichage = document.querySelector('.affichage')
 const switchTheme = document.querySelector('.theme')
 const bodyNode = document.querySelector('body')
 const headerNode = document.querySelector('header')
+const loader = document.querySelector(".loader")
 
 // Création d'une fonction asynchrone
 async function callAPI() {
@@ -37,6 +38,8 @@ function creationCarte(article) {
 
         affichage.innerHTML += carteHTML
     }
+
+    loader.style.display = "none"
 }
 
 switchTheme.addEventListener('submit', (e) => {
@@ -48,7 +51,7 @@ switchTheme.addEventListener('submit', (e) => {
 function convertDate(date) {
     var yyyy = date.getFullYear().toString()
     var mm = (date.getMonth()+1).toString()
-    var dd  = date.getDate().toString()
+    var dd  = (date.getDate()-2).toString()
   
     var mmChars = mm.split('')
     var ddChars = dd.split('')

@@ -98,7 +98,7 @@ a {
     background-color: #003264;
 }
 
-/* Ajuste les dimentions de la grille de projets et du texte de la navbar pour les résolutions inférieures */
+/* Ajuste les dimentions de la grille des articles pour les résolutions inférieures */
 @media (min-width: 540px) {
     .carte { width: 500px; }
     footer { font-size: 24px; }
@@ -112,6 +112,46 @@ a {
     .affichage { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Pour le thème sombre */
 .body-dark {
     background-color: #001e3c;
+}
+
+/* Loader animation */
+
+.loader {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+}
+
+.point {
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: blue;
+    animation: monte .3s alternate infinite;
+}
+
+@keyframes monte {
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+.point:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.point:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.point:nth-child(3) {
+    animation-delay: .3s;
 }
