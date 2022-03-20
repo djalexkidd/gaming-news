@@ -6,7 +6,7 @@ const affichZero = (nombre) => {
 
 const date = () => {
     const infos = new Date();
-    document.querySelector('.mdl-logo').innerHTML = `Gaming News par <a href="https://github.com/djalexkidd/" target="_blank">djalexkidd</a> et <a href="https://github.com/daymortel/" target="_blank">Daymortel</a> &copy; 2022-${affichZero(infos.getFullYear())}`;
+    document.querySelector('.mdl-logo').innerHTML = `Gaming News par djalexkidd & Daymortel &copy; 2022-${affichZero(infos.getFullYear())}`;
 }
 
 setInterval('date()');
@@ -24,7 +24,7 @@ const convertDate = (date) => {
     return yyyy + '-' + (mmChars[1]?mm:'0'+mmChars[0]) + '-' + (ddChars[1]?dd:'0'+ddChars[0]);
 }
 
-const APICALL = `https://newsapi.org/v2/everything?q=gaming&from=${convertDate(todaysDate)}&language=fr&sortBy=publishedAt&apiKey=9bb12d05dbd64b3fb03c2bb2ae8db510`;
+const APICALL = `https://gnews.io/api/v4/search?q=gaming&token=003657fad27339671a7e8c97f31e00f3&lang=fr`;
 
 const affichage = document.querySelector('.mdl-grid');
 const switchTheme = document.querySelector('.theme');
@@ -46,7 +46,7 @@ const creationCarte = (article) => {
         const carteHTML = `
         <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
                     <div class="mdl-card__media">
-                        <img class="article-image" src=" ${article.articles[i].urlToImage}" border="0" alt="">
+                        <img class="article-image" src=" ${article.articles[i].image}" border="0" alt="">
                     </div>
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">${article.articles[i].title}</h2>
