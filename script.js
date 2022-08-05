@@ -21,7 +21,6 @@ async function callAPI() {
 function creationCarte(article) {
     for(let i = 0; i < article.articles.length; i++) {
         const date = new Date(`${article.articles[i].publishedAt}`)
-        const formated_date = date.getDate() + '/' + (date.getMonth() + 1)  + '/' + date.getFullYear() + ' à ' + date.getUTCHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
 
         const carteHTML = `
         <div class="carte">
@@ -30,7 +29,7 @@ function creationCarte(article) {
             <ul class="cont-infos">
                 <li class="description">${article.articles[i].description}</li>
                 <li class="source">Source : ${article.articles[i].source.name}</li>
-                <li class="published">Date : ${formated_date}</li>
+                <li class="published">Date : ${date.toLocaleDateString("fr-FR") + " " + date.toLocaleTimeString("fr-FR")}</li>
                 <a class="link" href=${article.articles[i].url} target="_blank">Lien de l'article</a>
             </ul>
         </div>
